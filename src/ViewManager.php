@@ -11,8 +11,8 @@ class ViewManager
     public function __construct()
     {
         $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__).'\templates');
-        $this -> twig = new \Twig\Enviroment($loader, [
-            'cache' => dirname(__DIR__).'\cache\views'
+        $this -> twig = new \Twig\Environment($loader, [
+            'cache' => dirname(__DIR__).'/cache/views'
         ]);
     }
 
@@ -23,7 +23,7 @@ class ViewManager
             extract ($args, EXTR_SKIP);
         }
 
-        $file = dirname(__DIR__)."/templates/".$view;
+        $file = dirname(__DIR__)."\templates".$view;
 
         if (is_readeable($file))
         {
