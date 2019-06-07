@@ -13,7 +13,8 @@ class kernel
     public function __construct()
     {
         $this -> container = $this -> createContainer();
-        $this -> logger = $this -> container -> get(LogManager::class);
+        $this -> logger = $this -> container -> get (LogManager::class);
+        $this -> doctrine = $this -> container -> get (DoctrineManager::class);
     }
 
     public function init()
