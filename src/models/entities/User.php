@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table (name = "users")
  */
 
- class User 
+ class User extends Entity
  {
     /**
     * @ORM\Id
@@ -22,45 +22,21 @@ use Symfony\Component\Validator\Constraints as Assert;
 
     /**
      * @ORM\Column (type = "string")
-     * @Assert\NotBlank
-     * (
-     *      message = "Debes rellenar el nombre"
-     * )
-     * @Assert\Length
-     * (
-     *      min = "2",
-     *      minMessage = "Minimo 2 caracteres"
-     * )
+
      */
 
      protected $name;
 
     /**
      * @ORM\Column (type = "string")
-     * @Assert\NotBlank
-     * (
-     *      message = "Debes introducir un email"
-     * )
-     * @Assert\Email
-     * (
-     *      min = "6",
-     *      message = "Debes introducir un email valido"
-     * )
+
      */
 
      protected $email;
 
     /**
      * @ORM\Column (type = "string")
-     * @Assert\NotBlank
-     * (
-     *      message = "Debes introducir el password"
-     * )
-     * @Assert\Length
-     * (
-     *      min = "6",
-     *      message = "Debes introducir 6 caracteres minimo"
-     * )
+
      */
 
      protected $password;
